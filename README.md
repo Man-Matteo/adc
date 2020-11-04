@@ -1,0 +1,2 @@
+# adc
+Architettura dei Calcolatori
