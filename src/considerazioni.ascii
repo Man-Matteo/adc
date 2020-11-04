@@ -1,0 +1,15 @@
+La prima allocazione viene fatta con il puntatore p e malloc (), e dovrebbe restituirmi l'indirizzo virtuale del 
+primo byte allocato. Se l'allocazione sfocia in un errore (ad esempio se non c'è più spazio), è prevista la 
+terminazione del programma. Quando stampo, oltre a stampare il primo carattere, stampo anche quelli dopo e prima
+di lui; può causare segmentation fault.
+
+Il valore in p[-8] = 33 rimane tale finchè non richiedo altri caratteri da allocare. 33 diventa 49 non appena 
+ottengo quell'ampliamento di 16 byte che serve per ospitare 25 caratteri o più.
+
+Alla prima allocazione fatta con p ne segue una con q e successivamente viene aumentato e diminuito il numero di 
+caratteri da allocare, con l'uso di realloc() e free().
+
+Infine quando chiamo realloc() può capitare che l'area di memoria venga liberata e ne venga allocata una più grande
+in un altro punto, e quindi posso confrontare gli output di p prima della realloc() e dopo.
+
+ 
